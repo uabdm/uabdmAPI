@@ -1,5 +1,5 @@
 // Options
-const CLIENT_ID = '';
+const CLIENT_ID = '221115922051-9hoc622dlq3cnqup9i71g2ski5jkc8rh.apps.googleusercontent.com';
 const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"];
 const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
 
@@ -17,7 +17,7 @@ function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
 
-//Init API client library and set up sign in listeners
+/* Init API client library and set up sign in listeners -- FROM YOUTUBE TUTORIAL
 function initClient() {
   gapi.client.init({
     discoveryDocs: DISCOVERY_DOCS,
@@ -30,6 +30,24 @@ function initClient() {
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     authorizeButton.onclick = handleAuthClick;
     signoutButton.onclick = handleSignOutClick;
+  });
+}
+*/
+
+function initClient() {
+  // Initialize the client with API key and People API, and initialize OAuth with an
+  // OAuth 2.0 client ID and scopes (space delimited string) to request access.
+  gapi.client.init({
+      apiKey: 'AIzaSyC9p5WA8ip4a7OGcGS3_bUp7vcwoG_xSt8',
+      discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
+      clientId: '221115922051-9hoc622dlq3cnqup9i71g2ski5jkc8rh.apps.googleusercontent.com',
+      scope: 'profile'
+  }).then(function () {
+    // Listen for sign-in state changes.
+    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+    // Handle the initial sign-in state.
+    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
   });
 }
 
