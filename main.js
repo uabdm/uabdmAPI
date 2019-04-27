@@ -41,7 +41,7 @@ function initClient() {
       apiKey: 'AIzaSyC9p5WA8ip4a7OGcGS3_bUp7vcwoG_xSt8',
       discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
       clientId: '221115922051-9hoc622dlq3cnqup9i71g2ski5jkc8rh.apps.googleusercontent.com',
-      scope: 'profile'
+      scope: 'https://www.googleapis.com/auth/youtube.readonly'
   }).then(function () {
     // Listen for sign-in state changes.
     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
