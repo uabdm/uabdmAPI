@@ -16,9 +16,9 @@ function initClient() {
   // Initialize the client with API key and People API, and initialize OAuth with an
   // OAuth 2.0 client ID and scopes (space delimited string) to request access.
   gapi.client.init({
-      apiKey: 'AIzaSyC9p5WA8ip4a7OGcGS3_bUp7vcwoG_xSt8',
+      apiKey: '',
       discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
-      clientId: '221115922051-9hoc622dlq3cnqup9i71g2ski5jkc8rh.apps.googleusercontent.com',
+      clientId: '',
       scope: 'https://www.googleapis.com/auth/youtube.readonly'
   }).then(function () {
     // Listen for sign-in state changes.
