@@ -17,23 +17,6 @@ function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
 
-/* Init API client library and set up sign in listeners -- FROM YOUTUBE TUTORIAL
-function initClient() {
-  gapi.client.init({
-    discoveryDocs: DISCOVERY_DOCS,
-    clientID: CLIENT_ID,
-    scope: SCOPES
-  }).then(() => {
-    //Listen for sign in state changes
-    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-    // Handle initial sign in state
-    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-    authorizeButton.onclick = handleAuthClick;
-    signoutButton.onclick = handleSignOutClick;
-  });
-}
-*/
-
 function initClient() {
   // Initialize the client with API key and People API, and initialize OAuth with an
   // OAuth 2.0 client ID and scopes (space delimited string) to request access.
