@@ -74,7 +74,7 @@ authorizeButton.addEventListener("click", function(){
 
 // Handle logout
 signoutButton.addEventListener("click", function(){
-  gapi.auth2.getAuthInstance().signIn();
+  gapi.auth2.getAuthInstance().signOut();
 }); 
 
 // Get channel from api
