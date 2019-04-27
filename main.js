@@ -70,12 +70,12 @@ function updateSigninStatus(isSignedIn) {
 // Handle login
 authorizeButton.addEventListener("click", function(){
   gapi.auth2.getAuthInstance().signIn();
-});  
+});
 
 // Handle logout
-function handleSignOutClick() {
-  gapi.auth2.getAuthInstance().signOut();
-}
+signoutButton.addEventListener("click", function(){
+  gapi.auth2.getAuthInstance().signIn();
+}); 
 
 // Get channel from api
 function getChannel(channel) {
